@@ -2,6 +2,7 @@
   <h3>新しく【PLAYERNAME】と【NUMBER】と【POSITION】と【NATIONALITY】を登録します</h3>
   <h5>エラーメッセージ</h5>
   <p>{{ alterForm.value | json }} {{ alterForm.status | json }}</p>
+  <h1><p>{{clickMessage}}</p></h1>
 
   <form novalidate [formGroup]="alterForm" #fform="ngForm" (ngSubmit)="onSubmit()">
     <p>
@@ -39,6 +40,6 @@
       </td>
     </table>
 
-    <button type="submit" mat-button class="background-primary text-floral-white">修正</button>
+    <button type="submit" mat-button class="background-primary text-floral-white" (click)="onClickMe()">修正</button>
   </form>
 </div>

@@ -11,6 +11,8 @@ import { Player, Nationality } from '../shared/player';
 })
 export class AlterComponent implements OnInit {
 
+  clickMessage = this.clickMessage;
+
   @ViewChild('fform') alterFormDirective;
 
   alterForm: FormGroup;
@@ -45,6 +47,10 @@ export class AlterComponent implements OnInit {
     this.alterFormDirective.resetForm();
     // document.getElementById("information").innerHTML = "修正成功しました";
     console.log("修正成功しました");
+  }
+
+  onClickMe() {
+    this.clickMessage = '修正成功しました';
   }
 
 }

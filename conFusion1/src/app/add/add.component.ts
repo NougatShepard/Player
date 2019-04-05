@@ -12,11 +12,14 @@ import { Player, Nationality } from '../shared/player';
 })
 export class AddComponent implements OnInit {
 
+  clickMessage = this.clickMessage;
+
   @ViewChild('fform') addFormDirective;
 
   addForm: FormGroup;
   player: Player;
   nationality = Nationality;
+  
 
   constructor(private pl: FormBuilder) {
     this.createForm();
@@ -45,6 +48,10 @@ export class AddComponent implements OnInit {
     });
     this.addFormDirective.resetForm();
     console.log("追加成功しました");
+  }
+
+  onClickMe() {
+    this.clickMessage = '追加成功しました';
   }
 
 }
