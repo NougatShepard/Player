@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Feedback, ContactType } from '../shared/feedback';
+import { Player, Nationality } from '../shared/player';
 
 
 @Component({
@@ -12,13 +12,13 @@ import { Feedback, ContactType } from '../shared/feedback';
 })
 export class AddComponent implements OnInit {
 
-  @ViewChild('fform') feedbackFormDirective;
+  @ViewChild('fform') addFormDirective;
 
-  feedbackForm: FormGroup;
-  feedback: Feedback;
-  contactType = ContactType;
+  addForm: FormGroup;
+  player: Player;
+  nationality = Nationality;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private pl: FormBuilder) {
     this.createForm();
   }
 
@@ -26,30 +26,25 @@ export class AddComponent implements OnInit {
   }
 
   createForm() {
-    this.feedbackForm = this.fb.group({
-      firstname: ['', Validators.required ],
-      lastname: ['', Validators.required ],
-      telnum: ['', Validators.required ],
-      email: ['', Validators.required ],
-      agree: false,
-      contacttype: 'None',
-      message: ''
+    this.addForm = this.pl.group({
+      playername: ['', Validators.required ],
+      number: ['', Validators.required ],
+      position: ['', Validators.required ],
+      nationality: false,
     });
   }
 
   onSubmit() {
-    this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
-    this.feedbackForm.reset({
-      firstname: '',
-      lastname: '',
-      telnum: '',
-      email: '',
-      agree: false,
-      contacttype: 'None',
-      message: ''
+    this.player = this.addForm.value;
+    console.log(this.player);
+    this.addForm.reset({
+      playername: '',
+      number: '',
+      position: '',
+      nationality: false,
     });
-    this.feedbackFormDirective.resetForm();
+    this.addFormDirective.resetForm();
+    console.log("追加成功しました");
   }
 
 }

@@ -26,6 +26,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddComponent,
     AlterComponent,
     SearchComponent,
-    DeleteComponent
+    DeleteComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

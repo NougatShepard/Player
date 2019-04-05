@@ -1,10 +1,8 @@
 export class Player {
-    id: number;
-    number: number;
     playername: String;
+    number: number;
     position: String;
-    userid: number;
-    nationalityid: number;
+    nationality: String;
 };
 
-export const ContactType = ['nid'];
+export const Nationality = ['Japan', 'USA', 'UK'];

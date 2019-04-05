@@ -1,3 +1,10 @@
-<p>
-  delete works!
-</p>
+<div fxFlex fxFlexOffset="20px" class="form-size">
+  <h3>さっきクリックしたデータを削除します</h3>
+  <h5>削除するレコードID：playerテーブル.ID</h5>
+  <p>{{clickMessage}}</p>
+  <!-- <p>{{ deleteForm.value | json }} {{ deleteForm.status | json }}</p> -->
+
+  <!-- <form novalidate [formGroup]="deleteForm" #fform="ngForm" (ngSubmit)="onSubmit()"> -->
+    <button type="submit" mat-button class="background-primary text-floral-white" (click)="onClickMe()">削除</button>
+  <!-- </form> -->
+</div>
