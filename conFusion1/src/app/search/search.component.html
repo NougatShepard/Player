@@ -1,3 +1,58 @@
-<p>
-  search works!
-</p>
+<div fxFlex fxFlexOffset="20px" class="form-size">
+    <h3>【検索画面】から【検索結果画面】へ</h3>
+    <h5>エラーメッセージ                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登録ユーザーID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adminさん</h5>
+    <p>{{ addForm.value | json }}</p>
+    <h1><p>{{clickMessage}}</p></h1>
+  
+    <form novalidate [formGroup]="addForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-label><h4>NUMBER:</h4></mat-label>
+        <mat-form-field >
+          <input matInput formControlName="number" placeholder="NUMBER" type="text" required>
+          <mat-error *ngIf="addForm.get('number').hasError('required') && addForm.get('number').touched">NUMBER is required</mat-error>
+        </mat-form-field >
+      </p>
+    
+      <p>
+        <mat-label><h4>PLAYERNAME:</h4></mat-label>
+        <mat-form-field>
+          <input matInput formControlName="playername" placeholder="PLAYERNAME" type="text" required>
+          <mat-error *ngIf="addForm.get('playername').hasError('required') && addForm.get('playername').touched">PLAYERNAME is required</mat-error>
+        </mat-form-field >
+      </p>
+      <table class="form-size">
+        <td>
+          <mat-label><h4>NATIONALITY:</h4></mat-label>
+        </td>
+        <td>
+          <mat-select placeholder="" formControlName="nationality">
+            <mat-option *ngFor="let ntype of nationality" [value]="ntype">
+              {{ ntype }}
+            </mat-option>
+          </mat-select>
+        </td>
+      </table>
+  
+      <!-- <button type="submit" mat-button class="background-primary text-floral-white" (click)="onClickMe()">検索</button>
+      <button type="submit" mat-button class="background-primary text-floral-white" (click)="onClickMe()">リセット</button>
+      <button type="submit" mat-button class="background-primary text-floral-white" (click)="onClickMe()">追加</button> -->
+      
+      <div>
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button ><a href="http://localhost:4200/result" style="text-decoration: none">検索</a></button>
+              <button mat-button class="background-primary text-floral-white" (click)="onClickMe()">リセット</button>
+              <button mat-button><a href="http://localhost:4200/add" style="text-decoration: none">追加</a></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+    </form>
+  </div>
+  

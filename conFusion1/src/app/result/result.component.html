@@ -1,0 +1,54 @@
+
+
+<div class="container"
+fxLayout="column"
+fxLayoutGap="10px">
+
+
+
+<div fxFlex>
+  <div>
+    <h3>検索結果</h3>
+    <hr>
+  </div>
+</div>
+
+<div fxFlex>
+    <mat-grid-list cols="1" rowHeight="60px">
+      <mat-grid-tile>
+       
+        <mat-grid-tile-footer>
+            <tr>
+                <td> 背番号 &nbsp;</td>
+                <td> 名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前 </td>
+                <td> 国籍 </td>
+                <td> ポジション </td>
+                <td> 修正 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td> 削除 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              </tr>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+<div fxFlex>
+  <mat-grid-list cols="1" rowHeight="60px">
+    <mat-grid-tile *ngFor="let player of players" [routerLink]="['/playerdetail',player.number]">
+     
+      <mat-grid-tile-footer>
+          <tr>
+              <td> {{player.number}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td> {{player.playername | uppercase}} </td>
+              <td> {{player.nationality}} </td>
+              <td> {{player.position}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td> <button mat-button ><a href="http://localhost:4200/alter" style="text-decoration: none">修正</a></button></td>
+              <td> <button mat-button ><a href="http://localhost:4200/delete" style="text-decoration: none">削除</a></button></td>
+            </tr>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
+
+

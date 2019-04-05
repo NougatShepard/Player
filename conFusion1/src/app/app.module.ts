@@ -28,6 +28,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 
+import { MatListModule } from '@angular/material/list';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
+import { PlayerService } from './services/player.service';
+import { PlayerdetailComponent } from './playerdetail/playerdetail.component';
+import { ResultComponent } from './result/result.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +46,9 @@ import { FooterComponent } from './footer/footer.component';
     AlterComponent,
     SearchComponent,
     DeleteComponent,
-    FooterComponent
+    FooterComponent,
+    PlayerdetailComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +62,13 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     MatSelectModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

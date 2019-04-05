@@ -5,4 +5,4 @@ export class Player {
     nationality: String;
 };
 
-export const Nationality = ['Japan', 'USA', 'UK'];
+export const Nationality = ['日本', '別の'];
